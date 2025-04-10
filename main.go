@@ -3,9 +3,9 @@ package main
 import (
 	"log"
 	"my-todo-app/config"
-	"my-todo-app/iternal/api"
-	"my-todo-app/iternal/repo"
-	"my-todo-app/iternal/service"
+	"my-todo-app/internal/api"
+	"my-todo-app/internal/repo"
+	"my-todo-app/internal/service"
 )
 
 func main() {

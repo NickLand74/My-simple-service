@@ -6,10 +6,17 @@ import (
 	"my-todo-app/internal/api"
 	"my-todo-app/internal/repo"
 	"my-todo-app/internal/service"
+
+	"github.com/joho/godotenv" // <--- Добавленный импорт
 )
 
 func main() {
-	// Загрузка конфигурации
+	// Загрузка переменных из .env
+	if err := godotenv.Load(); err != nil {
+		log.Printf("Ошибка загрузки .env: %v", err)
+	}
+
+	// Загрузка конфигурации через envconfig
 	cfg, err := config.LoadConfig()
 	if err != nil {
 		log.Fatalf("Failed to load config: %v", err)
